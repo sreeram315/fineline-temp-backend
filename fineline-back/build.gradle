@@ -1,0 +1,32 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+apply plugin: 'war'
+
+group 'org.fineline'
+version '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+    implementation 'com.hazelcast:hazelcast:5.2.1'
+    implementation 'com.hazelcast:hazelcast-sql:5.2.1'
+
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws:2.4.2'
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws-messaging:2.4.2'
+}
+
+test {
+    useJUnitPlatform()
+}

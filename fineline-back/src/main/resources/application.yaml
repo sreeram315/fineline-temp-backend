@@ -1,0 +1,44 @@
+# Database
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/fineline?createDatabaseIfNotExist=true
+#        url: jdbc:mysql://fineline-database-service:3310/fineline?createDatabaseIfNotExist=true
+        username: root
+        password: sreerAM31@&
+    jpa:
+        hibernate:
+            ddl-auto: update
+# Hazelcast
+hazelcast:
+    enabled: false
+# AWS related
+cloud:
+    aws:
+        enabled: true
+        region:
+            static: ap-south-1
+        credentials:
+            access-key: AKIAYIFD4UGMQU4JIF74
+            secret-key: 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
+        queue:
+            name: waffle-add-student
+            end-point: https://sqs.ap-south-1.amazonaws.com/567279395225/waffle-add-student
+        sns:
+            enables: false
+            topic:
+                arn: arn:aws:sns:ap-south-1:567279395225:testtopic
+server:
+    port: 8081
+
+
+
+# AWS MYSQL RDS
+#spring.datasource.url=jdbc:mysql://varane.cqwyqvafdom2.ap-south-1.rds.amazonaws.com:3307/varane
+#spring.datasource.username=admin
+#spring.datasource.password=i_remembered_to_delete_my_password
+
+# H2 (in-memory)
+#spring.h2.console.enabled=true
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.url=jdbc:h2:mem:myDb
+#spring.jpa.hibernate.ddl-auto=update
